@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 
 const Post = ({ post, update }) => {
-    const deletePost = e => {
+    const deletePost = async e => {
         e.preventDefault();
-        axios.delete(`https://disneyparent-backend.herokuapp.com/posts/${post.id}`)
+        await axios.delete(`https://disneyparent-backend.herokuapp.com/posts/${post.id}`)
         .then(res => console.log(res))
         .catch(err => console.log(err));
         update();
